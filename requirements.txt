@@ -1,5 +1,3 @@
-pytorch
-
 wandb
 
 protobuf

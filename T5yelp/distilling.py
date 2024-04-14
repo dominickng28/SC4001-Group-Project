@@ -1,10 +1,9 @@
 import accelerate
 from accelerate import Accelerator
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, GPT2Tokenizer
-from transformers import Seq2SeqTrainingArguments, Seq2SeqTrainer, AutoModelForSeq2SeqLM, DataCollatorForSeq2Seq
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers import Seq2SeqTrainingArguments, Seq2SeqTrainer, DataCollatorForSeq2Seq
 from transformers import T5ForConditionalGeneration
 from transformers import DataCollatorForSeq2Seq
-from transformers.trainer_utils import set_seed
 import pandas as pd
 import torch
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -28,8 +27,8 @@ args = parser.parse_args()
 
 # For the json dataset
 data_files = {
-            'train': "/home/UG/ng0003ck/T5yelp/yelp/llm/yelp_llm_train.json",
-            'test': "/home/UG/ng0003ck/T5yelp/yelp/llm/yelp_llm_test.json",
+            'train': "./T5yelp/yelp/llm/yelp_llm_train.json",
+            'test': "./T5yelp/yelp/llm/yelp_llm_test.json",
         }
 
 json_dataset = load_dataset("json", data_files=data_files)
@@ -85,11 +84,11 @@ tokenized_dataset = json_dataset.map(tokenize_func, remove_columns=['id', 'quest
 
 
 training_args = Seq2SeqTrainingArguments(
-    output_dir = '/home/UG/ng0003ck/T5yelp',
+    output_dir = './T5yelp',
     remove_unused_columns = False,
     evaluation_strategy = 'steps',
     save_strategy='no',
-    logging_dir= "/home/UG/ng0003ck/T5yelp/logs",
+    logging_dir= "./T5yelp/logs",
     logging_steps= 100,
     max_steps=3500,
     learning_rate=2e-5,

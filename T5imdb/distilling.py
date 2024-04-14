@@ -1,10 +1,9 @@
 import accelerate
 from accelerate import Accelerator
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, GPT2Tokenizer
-from transformers import Seq2SeqTrainingArguments, Seq2SeqTrainer, AutoModelForSeq2SeqLM, DataCollatorForSeq2Seq
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers import Seq2SeqTrainingArguments, Seq2SeqTrainer, DataCollatorForSeq2Seq
 from transformers import T5ForConditionalGeneration
 from transformers import DataCollatorForSeq2Seq
-from transformers.trainer_utils import set_seed
 import pandas as pd
 import torch
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -19,7 +18,6 @@ from sklearn.model_selection import train_test_split
 import wandb
 import argparse
 import json
-
 # Arg Parser
 parser = argparse.ArgumentParser()
 parser.add_argument('--subsample', type=float, default=1.0)
@@ -28,8 +26,8 @@ args = parser.parse_args()
 
 # For the json dataset
 data_files = {
-            'train': "/home/UG/ng0003ck/T5imdb/imdb/llm/imdb_llm_train.json",
-            'test': "/home/UG/ng0003ck/T5imdb/imdb/llm/imdb_llm_test.json",
+            'train': "./T5imdb/imdb/llm/imdb_llm_train.json",
+            'test': "./T5imdb/imdb/llm/imdb_llm_test.json",
         }
 
 json_dataset = load_dataset("json", data_files=data_files)

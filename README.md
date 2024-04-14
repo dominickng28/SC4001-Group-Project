@@ -16,7 +16,25 @@ Use `--pretrained` to select pretrained T5 models to use. Default: `google/t5-v1
 Use `--subsample` to select the size of the dataset to use. Default: `1.0`
 
 ## Example
+- To run Standard Finetuning, with 75% of data on T5 small
+```bash
+python finetuning.py --subsample 0.75 --pretrained google/t5-v1_1-small
+```
 
+- To run Distilling Step-By-Step using the human labeled data, with 75% of data on T5 small
+```bash
+python distill-step-by-step.py --subsample 0.75 --pretrained google/t5-v1_1-small
+```
+
+- To run Standard Distillation, with 100% of data on T5 base
+```bash
+python distilling.py --subsample 1.0 --pretrained google/t5-v1_1-base
+```
+
+- To run Distilling Step-By-Step using the LLM annotated data, with 100% of data on T5 base
+```bash
+python distill-step-by-step2.py --subsample 1.0 --pretrained google/t5-v1_1-base
+```
 
 ## Reference
 ```bash

@@ -9,6 +9,12 @@ Pytorch is required for the code to work. Install it here: [Pytorch Website](htt
 ```bash
 pip install -r requirements.txt
 ```
+## Data Used
+Download link to the original IMDb dataset: [IMDb](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews)
+
+Download link to the original Yelp dataset: 
+
+We preprocess the dataset using the codes in the data preprocessor folder to generate the rationales and labels(for Distillation) and convert to json. The processed data are in T5imdb and T5yelp folders respectively.
 
 ## Command Usage
 Use `--pretrained` to select pretrained T5 models to use. Default: `google/t5-v1_1-small`

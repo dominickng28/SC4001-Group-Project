@@ -5,6 +5,7 @@ Chain-of-Thought (CoT) Distillation: Outperforming Large Language Models with Ta
 Angie Wong Mei Chi, Dominick Ng Jie En, Keith Heng Jinsheng
 
 ## Installing Dependencies
+Pytorch is required for the code to work. Install it here: [Pytorch Website](https://pytorch.org/)
 ```bash
 pip install -r requirements.txt
 ```

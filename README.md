@@ -1,8 +1,9 @@
 # SC4001-Neural Network & Deep Learning-Group-Project
 Chain-of-Thought (CoT) Distillation: Outperforming Large Language Models with Task-Specific Small Language Models and Less Training Data 
 
+[Report](https://github.com/dominickng28/SC4001-Group-Project/blob/main/SC4001%20Project.pdf)
 ## Authors
-Angie Wong Mei Chi, Dominick Ng Jie En, Keith Heng Jinsheng
+[Angie Wong Mei Chi](https://github.com/Awonnie), [Dominick Ng Jie En](https://github.com/dominickng28), [Keith Heng Jinsheng](https://github.com/Keith2978)
 
 ## Installing Dependencies
 Pytorch is required for the code to work. Install it here: [Pytorch Website](https://pytorch.org/)
